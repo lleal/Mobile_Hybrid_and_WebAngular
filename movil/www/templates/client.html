@@ -1,0 +1,49 @@
+<ion-view view-title="Cliente">
+     <ion-header-bar class="bar-positive fix-buttons">
+            <div class="buttons left-buttons" style="margin-top: 5px; margin-right: 5px;">
+            <button class="button button-icon icon ion-android-arrow-back flat" ng-click="goToList()"></button>
+            </div>
+            <h1 class="title">{{cliente_modal.titulo}}</h1>
+     </ion-header-bar>
+    <ion-pane>
+    <ion-content class="has-footer has-subfooter">
+        <ion-list>
+            <ion-item>
+                <h2>
+                    ID: {{client.id_cliente}}
+                </h2>   
+            </ion-item>
+            <ion-item>
+                <h2>
+                    Nombre: {{client.nombre}}
+                </h2>   
+            </ion-item>
+            <ion-item>
+                <h2>
+                    Apellido: {{client.apellido}}
+                </h2>   
+            </ion-item>
+            <ion-item>
+                <h2>
+                    Edad: {{client.edad}}
+                </h2>   
+            </ion-item>
+            <ion-item>
+                <h2>
+                    Correo: {{client.email}}
+                </h2>   
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-positive" align-title="left">
+        <div class="buttons buttons-right">
+            <button  ng-click="openModalEditar()" class="button button-royal-900 button-fab" style="margin-right: 75px;">
+                <i class="icon ion-compose"></i>
+            </button>
+            <button  ng-click="borrarCliente()" class="button button-assertive-900 button-fab">
+                <i class="icon ion-android-close"></i>
+            </button>
+        </div>
+  </ion-footer-bar>     
+    </ion-pane>    
+</ion-view>

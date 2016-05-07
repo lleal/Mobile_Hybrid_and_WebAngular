@@ -1,0 +1,32 @@
+<ion-view view-title="Clientes">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right" class="buttons buttons-right">
+            <button  ng-click="openModalInsertar()" class="button button-balanced-900 button-fab">
+                <i class="icon ion-plus"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-pane>
+    <ion-content class="has-footer has-subfooter">
+        <ion-list>
+            <ion-item ng-repeat="client in clients | filter: filterClientList" >
+                <h2 ng-click="goToClient(client)">
+                    {{client.nombre}}
+                    {{client.apellido}}
+                </h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-positive" align-title="left">
+        <div class="buttons buttons-right">
+            <button  ng-click="openModalBuscar()" class="button button-royal-900 button-fab">
+                <i class="icon ion-search"></i>
+            </button>
+        </div>
+  </ion-footer-bar>    
+    </ion-pane>    
+</ion-view>
