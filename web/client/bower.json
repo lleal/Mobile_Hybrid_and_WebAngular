@@ -21,7 +21,9 @@
     "angular-i18n": "1.2.23",
     "angular-bootstrap": "0.13.4",
     "fastclick": "1.0.3",
-    "angular-datepicker": "^2.0.3"
+    "angular-datepicker": "^2.0.3",
+    "angular-strap": "^2.3.8",
+    "angular-locale": "^0.1.10"
   },
   "resolutions": {
     "angular": "1.2.29"

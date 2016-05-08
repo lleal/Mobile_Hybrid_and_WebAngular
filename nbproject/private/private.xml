@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/.bowerrc</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/bower.json</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/README.md</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/www/index.html</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/bower.json</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/www/js/services/clientservice.js</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/README.md</file>
-            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/.bowerrc</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/js/controllers/main.js</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/www/templates/cliente_modal.html</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/movil/www/js/controllers/home.js</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/js/app.js</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/bower_components/angular-datepicker/.bower.json</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/views/main.html</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/index.html</file>
+            <file>file:/C:/xampp/htdocs/Mobile_Hybrid_and_WebAngular/web/client/bower_components/angular-bootstrap/README.md</file>
         </group>
     </open-files>
 </project-private>
