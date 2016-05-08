@@ -13,4 +13,6 @@ Cliente Web:
 
 /web/client
 
-Se puede correr bower install en las carpetas /movil/ y /web/client para tener las librerias, aunque estan incluidas en este repositorio.
+Se utilizo el gestor de paquetes bower con el comando bower install en las carpetas /movil/ y /web/client para tener las librerias.
+
+Campo Edad es calculado a partir de la fecha de nacimiento insertada.
