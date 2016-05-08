@@ -9,7 +9,7 @@
             <thead>
                 <tr class="row">
                     <h4>Buscador</h4>
-                    <button class='btn btn-success'>Nuevo Cliente</button>
+                    <button class='btn btn-success' ng-click="startFormInsertar()">Nuevo Cliente</button>
                 </tr>
             </thead>
             <tbody>
@@ -64,31 +64,31 @@
             </tbody>
         </table>    
     </div>
-    <div class='row'  id="nuevo_serv">
+    <div class='row'  id="form_client" ng-if="form_visible">
          <div class="panel panel-success">
-            <div class="panel-heading"> <strong class=""></strong></div>
+            <div class="panel-heading"> <strong class="">{{client_form.title}}</strong></div>
             <div class="panel-body">
             <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="ID">
+                    <input type="text" class="form-control" ng-model="client_form.id_cliente" placeholder="ID">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nombre">
+                    <input type="text" class="form-control" ng-model="client_form.nombre" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Apellido">
+                    <input type="text" class="form-control" ng-model="client_form.apellido" placeholder="Apellido">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Correo">
+                    <input type="text" class="form-control" ng-model="client_form.email" placeholder="Correo">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Edad">
+                    <input type="text" class="form-control" ng-model="client_form.fecha_nac" placeholder="Edad">
                 </div>
             </form>
                 <div class="form-group-lg list-group" >
-                    <button class='btn btn-success'>Crear</button>
-                    <button class='btn btn-warning'>Editar</button>
-                    <button class='btn btn-danger'>Borrar</button>
+                    <button class='btn btn-success' ng-if="client_form.modo === 1" ng-click="closeFormInsertar()">Crear</button>
+                    <button class='btn btn-warning' ng-if="client_form.modo !== 1">Editar</button>
+                    <button class='btn btn-danger' ng-if="client_form.modo !== 1">Borrar</button>
                 </div>   
             </div>
          </div>

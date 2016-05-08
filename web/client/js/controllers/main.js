@@ -7,8 +7,9 @@ app.config(['$routeProvider', function($routeProvider) {
   });
 }]);
 
-app.controller('MainCtrl', ['$scope', '$http',  '$anchorScroll', 'ClientService', function($scope,  $http, $anchorScroll,  ClientService) {
-    $scope.cliente_filtro = {};  
+app.controller('MainCtrl', ['$scope', '$location' , '$anchorScroll', 'ClientService', function($scope, $location,  $anchorScroll,  ClientService) {
+    $scope.cliente_filtro = {};
+    $scope.form_visible = false;
     startFiltro = function (){
       $scope.cliente_filtro.id = "";
       $scope.cliente_filtro.id_cliente = "";
@@ -64,5 +65,48 @@ app.controller('MainCtrl', ['$scope', '$http',  '$anchorScroll', 'ClientService'
 	});
     }
   readClients();  
+   $scope.client_form = {};  
+    startFiltro = function (){
+      $scope.client_form.id = "";
+      $scope.client_form.id_cliente = "";
+      $scope.client_form.nombre = "";
+      $scope.client_form.apellido = "";
+      $scope.client_form.email = "";
+      $scope.client_form.edad = "";
+      $scope.client_form.fecha_nac = "";
+      $scope.client_form.modo = 1;
+    };
+    startFiltro();
+    $scope.startFormInsertar = function (){
+        if ($scope.form_visible === false){
+            startFiltro();
+            $scope.client_form.modo = 1;
+            $scope.client_form.title = "Nuevo Cliente";
+            $scope.form_visible = true;
+            $location.hash('form_client');
+            $anchorScroll();
+            $location.hash('');
+        }else{
+            $scope.form_visible = false;
+        }
+    };
+    $scope.closeFormInsertar = function (){
+        var promesa = ClientService.insertClient($scope.client_form);
+
+    	promesa.then(function(data)
+	{
+            startFiltro();
+            console.log(data);
+            $scope.form_visible = false;
+            readClients();
+	}
+	,function(error)
+	{
+		alert("Error " + error);
+                console.log(error);
+                startFiltro();
+                $scope.form_visible = false;
+	});  
         
+    };
 }]);

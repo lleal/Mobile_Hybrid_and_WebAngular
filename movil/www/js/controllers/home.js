@@ -48,6 +48,7 @@ app.controller('HomeTabCtrl',['$scope', '$ionicModal' , '$location', '$rootScope
 	{
             startModal();
             console.log(data);
+            readClients();
 	}
 	,function(error)
 	{
@@ -55,7 +56,7 @@ app.controller('HomeTabCtrl',['$scope', '$ionicModal' , '$location', '$rootScope
                 console.log(error);
                 startModal();
 	});  
-    readClients();  
+      
     $scope.closeModal();  
   };
   $scope.closeModal = function(){ 
