@@ -2,7 +2,7 @@ var app = angular.module('proyecto-prueba');
 
 app.service('ClientService', ['$http', '$q', function($http, $q)
 {
-    this.serverLocation = "http://localhost/Mobile_Hybrid_and_WebAngular/web/server/";
+    this.serverLocation = "http://192.168.1.7/Mobile_Hybrid_and_WebAngular/web/server/";
     this.getClientsLocation = this.serverLocation + "public/clientes/get";
     this.insertClientsLocation = this.serverLocation + "public/clientes/insert";
     this.updateClientsLocation = this.serverLocation + "public/clientes/update";
