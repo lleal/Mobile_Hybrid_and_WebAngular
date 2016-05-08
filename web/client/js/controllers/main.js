@@ -144,7 +144,24 @@ app.controller('MainCtrl', ['$scope', '$location' , '$anchorScroll', 'ClientServ
                 $scope.form_visible = false;
 	});
     };
-    
+   $scope.closeFormEliminar = function(){
+     var promesa = ClientService.deleteClient($scope.client_form);
+
+    	promesa.then(function(data)
+	{
+            console.log(data);
+            readClients();
+            $scope.form_visible = false;
+	}
+	,function(error)
+	{
+		alert("Error " + error);
+                console.log(error);
+                $scope.form_visible = false;
+	});
+          
+   }; 
+        
   $scope.getType = function(key) {
     return Object.prototype.toString.call($scope[key]);
   };

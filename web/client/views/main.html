@@ -91,7 +91,7 @@
                 <div class="form-group-lg list-group" >
                     <button class='btn btn-success' ng-if="client_form.modo === 1" ng-click="closeFormInsertar()">Crear</button>
                     <button class='btn btn-warning' ng-if="client_form.modo !== 1" ng-click="closeFormEditar()">Editar</button>
-                    <button class='btn btn-danger' ng-if="client_form.modo !== 1">Borrar</button>
+                    <button class='btn btn-danger' ng-if="client_form.modo !== 1" ng-click="closeFormEliminar()">Borrar</button>
                 </div>   
             </div>
          </div>
