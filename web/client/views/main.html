@@ -4,6 +4,90 @@
     </div>
 </nav>
 <div class ='container'>
-    <div class='row'>
+    <div class="row">
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr class="row">
+                    <h4>Buscador</h4>
+                    <button class='btn btn-success'>Nuevo Cliente</button>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="ID"> 
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Nombre">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Apellido">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Correo">
+                    </td>  
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Edad">
+                    </td>  
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <div class='row'>
+        <table class="table table-hover table-stripped table-responsive table-clickable">
+            <thead>
+                <tr class="row">
+                    <th class="col-xs-2">ID</th>
+                    <th class="col-xs-2">Nombre</th>
+                    <th class="col-xs-3">Apellido</th>
+                    <th class="col-xs-3">Correo</th>
+                    <td class="col-xs-2">Edad</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class='row' ng-repeat='client in clients | filter: filterClientList'>
+                <div>
+                    <th class="col-xs-2">{{client.id_cliente}}</th>
+                    <th class="col-xs-2">{{client.nombre}}</th>
+                    <th class="col-xs-3">{{client.apellido}}</th>
+                    <th class="col-xs-3">{{client.edad}}</th>
+                    <td class="col-xs-2">{{client.email}}</td>
+                </div>    
+                </tr>    
+            </tbody>
+        </table>    
+    </div>
+    <div class='row'  id="nuevo_serv">
+         <div class="panel panel-success">
+            <div class="panel-heading"> <strong class=""></strong></div>
+            <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Edad">
+                </div>
+            </form>
+                <div class="form-group-lg list-group" >
+                    <button class='btn btn-success'>Crear</button>
+                    <button class='btn btn-warning'>Editar</button>
+                    <button class='btn btn-danger'>Borrar</button>
+                </div>   
+            </div>
+         </div>
+    </div>    
 </div>    
