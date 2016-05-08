@@ -46,9 +46,10 @@
                 <tr class="row">
                     <th class="col-xs-2">ID</th>
                     <th class="col-xs-2">Nombre</th>
-                    <th class="col-xs-3">Apellido</th>
-                    <th class="col-xs-3">Correo</th>
+                    <th class="col-xs-2">Apellido</th>
+                    <th class="col-xs-2">Correo</th>
                     <td class="col-xs-2">Edad</td>
+                    <td class="col-xs-2"></td>
                 </tr>
             </thead>
             <tbody>
@@ -56,9 +57,10 @@
                 <div>
                     <th class="col-xs-2">{{client.id_cliente}}</th>
                     <th class="col-xs-2">{{client.nombre}}</th>
-                    <th class="col-xs-3">{{client.apellido}}</th>
-                    <th class="col-xs-3">{{client.email}}</th>
+                    <th class="col-xs-2">{{client.apellido}}</th>
+                    <th class="col-xs-2">{{client.email}}</th>
                     <td class="col-xs-2">{{client.edad}}</td>
+                    <td class="col-xs-2"><button class='btn btn-primary' ng-click="startFormDetalles(client)">Detalles</button></td>
                 </div>    
                 </tr>    
             </tbody>
@@ -88,7 +90,7 @@
             </form>
                 <div class="form-group-lg list-group" >
                     <button class='btn btn-success' ng-if="client_form.modo === 1" ng-click="closeFormInsertar()">Crear</button>
-                    <button class='btn btn-warning' ng-if="client_form.modo !== 1">Editar</button>
+                    <button class='btn btn-warning' ng-if="client_form.modo !== 1" ng-click="closeFormEditar()">Editar</button>
                     <button class='btn btn-danger' ng-if="client_form.modo !== 1">Borrar</button>
                 </div>   
             </div>

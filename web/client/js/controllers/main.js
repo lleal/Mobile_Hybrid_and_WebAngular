@@ -95,6 +95,20 @@ app.controller('MainCtrl', ['$scope', '$location' , '$anchorScroll', 'ClientServ
             $scope.form_visible = false;
         }
     };
+    $scope.startFormDetalles = function (client){
+        if (($scope.form_visible === false) || ($scope.client_form.id !== client.id)){
+            $scope.client_form = client;
+            $scope.client_form.modo = 2;
+            $scope.client_form.title = "Modificar/Eliminar Cliente";
+            $scope.form_visible = true;
+            $location.hash('form_client');
+            $anchorScroll();
+            $location.hash('');
+        }else{
+            $scope.form_visible = false;
+        }
+    };
+    
     $scope.closeFormInsertar = function (){
         var promesa = ClientService.insertClient($scope.client_form);
 
@@ -114,16 +128,29 @@ app.controller('MainCtrl', ['$scope', '$location' , '$anchorScroll', 'ClientServ
 	});  
         
     };
-     $scope.selectedDate = new Date();
-  $scope.selectedDateAsNumber = Date.UTC(1986, 1, 22);
-  // $scope.fromDate = new Date();
-  // $scope.untilDate = new Date();
+    $scope.closeFormEditar = function(){
+         var promesa = ClientService.updateClient($scope.client_form);
+
+    	promesa.then(function(data)
+	{
+            console.log(data);
+            readClients();
+            $scope.form_visible = false;
+	}
+	,function(error)
+	{
+		alert("Error " + error);
+                console.log(error);
+                $scope.form_visible = false;
+	});
+    };
+    
   $scope.getType = function(key) {
     return Object.prototype.toString.call($scope[key]);
   };
 
   $scope.clearDates = function() {
-    $scope.selectedDate = null;
+    $scope.client_form.fecha_nac = null;
   };
     
     
