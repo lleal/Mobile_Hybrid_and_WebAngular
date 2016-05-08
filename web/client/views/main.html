@@ -15,24 +15,27 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="text" placeholder="ID"> 
+                        <input type="text" placeholder="ID" ng-model="cliente_filtro.id_cliente"> 
                     </td>
                     <td>
-                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Nombre" ng-model="cliente_filtro.nombre">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" placeholder="Apellido">
+                        <input type="text" placeholder="Apellido" ng-model="cliente_filtro.apellido">
                     </td>
                     <td>
-                        <input type="text" placeholder="Correo">
+                        <input type="text" placeholder="Correo" ng-model="cliente_filtro.email">
                     </td>  
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" placeholder="Edad">
-                    </td>  
+                        <input type="text" placeholder="Edad" ng-model="cliente_filtro.edad">
+                    </td>
+                    <td>
+                        <button class='btn btn-warning' ng-click="limpiarFiltro()">Limpiar Buscador</button>
+                    </td> 
                 </tr>
             </tbody>
         </table>

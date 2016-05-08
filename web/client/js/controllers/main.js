@@ -8,28 +8,30 @@ app.config(['$routeProvider', function($routeProvider) {
 }]);
 
 app.controller('MainCtrl', ['$scope', '$http',  '$anchorScroll', 'ClientService', function($scope,  $http, $anchorScroll,  ClientService) {
-    $scope.cliente_modal = {};  
-    startModal = function (){
-      $scope.cliente_modal.id = "";
-      $scope.cliente_modal.id_cliente = "";
-      $scope.cliente_modal.nombre = "";
-      $scope.cliente_modal.apellido = "";
-      $scope.cliente_modal.email = "";
-      $scope.cliente_modal.edad = "";
-      $scope.cliente_modal.fecha_nac = "";
+    $scope.cliente_filtro = {};  
+    startFiltro = function (){
+      $scope.cliente_filtro.id = "";
+      $scope.cliente_filtro.id_cliente = "";
+      $scope.cliente_filtro.nombre = "";
+      $scope.cliente_filtro.apellido = "";
+      $scope.cliente_filtro.email = "";
+      $scope.cliente_filtro.edad = "";
+      $scope.cliente_filtro.fecha_nac = "";
   };
-  startModal();
-        
+  startFiltro();
+    $scope.limpiarFiltro= function(){
+      startFiltro();  
+    };    
     $scope.filterClientList = function (client){
-      if (client.id_cliente.indexOf($scope.cliente_modal.id_cliente) === -1)
+      if (client.id_cliente.indexOf($scope.cliente_filtro.id_cliente) === -1)
           return false;
-      if (client.nombre.indexOf($scope.cliente_modal.nombre) === -1)
+      if (client.nombre.indexOf($scope.cliente_filtro.nombre) === -1)
           return false;
-      if (client.apellido.indexOf($scope.cliente_modal.apellido) === -1)
+      if (client.apellido.indexOf($scope.cliente_filtro.apellido) === -1)
           return false;
-      if (client.email.indexOf($scope.cliente_modal.email) === -1)
+      if (client.email.indexOf($scope.cliente_filtro.email) === -1)
           return false;
-      if (client.edad.indexOf($scope.cliente_modal.edad) === -1)
+      if (client.edad.indexOf($scope.cliente_filtro.edad) === -1)
           return false;
       return true;      
   };
